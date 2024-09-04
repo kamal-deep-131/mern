@@ -6,7 +6,7 @@ const InputField = ({ label, placeholder, name, onChange, value, type }) => {
             <label className='text-base md:text-lg'>{label}:</label>
             <input
                 className='w-full border border-gray-600
-                 rounded p-2 outline-black placeholder:text-gray-600'
+                 rounded p-2 outline-black placeholder:text-gray-600 placeholder:text-sm md:placeholder:text-base'
                 type={type}
                 name={name}
                 placeholder={placeholder}
