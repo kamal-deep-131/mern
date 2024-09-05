@@ -6,6 +6,7 @@ import { CreateIdea, EditIdea, Home, PageNotFound, Register } from './pages'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import { Login } from './pages'
 import { Toaster } from 'react-hot-toast'
+import { AuthContextProvider } from './context/context'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,8 +22,8 @@ const router = createBrowserRouter(
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <>
+  <AuthContextProvider >
     <RouterProvider router={router} />
     <Toaster />
-  </>
+  </AuthContextProvider>
 )

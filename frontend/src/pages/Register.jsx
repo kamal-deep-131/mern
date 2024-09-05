@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { InputField } from '../components'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-hot-toast'
 import axios from 'axios'
+import { authContext } from '../context/context'
 
 const Register = () => {
     const [formData, setFormData] = React.useState({
@@ -11,6 +12,8 @@ const Register = () => {
         password: "",
     })
     const [loading, setLoading] = React.useState(false)
+
+    const { setLogin } = useContext(authContext)
 
     const navigate = useNavigate()
 
@@ -35,6 +38,7 @@ const Register = () => {
                 localStorage.setItem("token", response.data.token)
                 localStorage.setItem("user", JSON.stringify(response.data.user))
                 toast.success("Login Successfull")
+                setLogin(true)
                 navigate("/profile")
                 setFormData({ name: "", email: "", password: "" })
                 setLoading(false)

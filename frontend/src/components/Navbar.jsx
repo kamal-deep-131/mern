@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useContext, useEffect } from 'react'
+import { authContext } from '../context/context'
 
 const Navbar = () => {
-    const [login, setLogin] = useState(true)
+    const { login } = useContext(authContext)
 
     return (
         <header className='flex items-center justify-between p-2 md:py-4 md:px-8 shadow-md bg-white'>

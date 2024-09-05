@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { InputField } from '../components'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from "react-hot-toast"
 import axios from 'axios'
+import { authContext } from '../context/context'
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -12,7 +13,7 @@ const Login = () => {
 
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
-
+    const { setLogin } = useContext(authContext)
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -34,6 +35,7 @@ const Login = () => {
                 localStorage.setItem("user", JSON.stringify(response.data.user))
                 toast.success("Login Successfull")
                 setLoading(false)
+                setLogin(true)
                 navigate("/profile")
                 setFormData({ email: "", password: "" })
             } catch (error) {
