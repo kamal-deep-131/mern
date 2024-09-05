@@ -7,6 +7,7 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import { Login } from './pages'
 import { Toaster } from 'react-hot-toast'
 import { AuthContextProvider } from './context/context'
+import { ProtectRoute } from './components'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -14,8 +15,8 @@ const router = createBrowserRouter(
       <Route index element={<Home />} path='/' />
       <Route element={<Login />} path='/login' />
       <Route element={<Register />} path='/register' />
-      <Route element={<CreateIdea />} path='idea/create' />
-      <Route element={<EditIdea />} path='idea/edit/:id' />
+      <Route element={<ProtectRoute><CreateIdea /></ProtectRoute>} path='idea/create' />
+      <Route element={<ProtectRoute><EditIdea /></ProtectRoute>} path='idea/edit/:id' />
       <Route element={<PageNotFound />} path='*' />
     </Route >
   )
