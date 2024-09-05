@@ -5,6 +5,7 @@ import Layout from './Layout'
 import { CreateIdea, EditIdea, Home, PageNotFound, Register } from './pages'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import { Login } from './pages'
+import { Toaster } from 'react-hot-toast'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,5 +21,8 @@ const router = createBrowserRouter(
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <>
+    <RouterProvider router={router} />
+    <Toaster />
+  </>
 )
