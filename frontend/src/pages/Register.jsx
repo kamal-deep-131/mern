@@ -1,7 +1,8 @@
 import React from 'react'
 import { InputField } from '../components'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-hot-toast'
+import axios from 'axios'
 
 const Register = () => {
     const [formData, setFormData] = React.useState({
@@ -9,12 +10,15 @@ const Register = () => {
         email: "",
         password: "",
     })
+    const [loading, setLoading] = React.useState(false)
+
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         if (formData.name == "") {
             toast.error("Please Enter Name")
@@ -25,7 +29,21 @@ const Register = () => {
             toast.error("Please Enter password")
         }
         if (formData.name && formData.email && formData.password) {
-            console.log("Register Data: ", formData)
+            try {
+                setLoading(true)
+                const response = await axios.post("/api/v1/user/register", formData)
+                localStorage.setItem("token", response.data.token)
+                localStorage.setItem("user", JSON.stringify(response.data.user))
+                toast.success("Login Successfull")
+                navigate("/profile")
+                setFormData({ name: "", email: "", password: "" })
+                setLoading(false)
+
+            } catch (error) {
+                setLoading(false)
+                toast.error(error.response.data.message)
+                setLoading(false)
+            }
         }
 
     }
@@ -53,7 +71,7 @@ const Register = () => {
                         placeholder={"**********"}
                         onChange={handleChange}
                         type="password" />
-                    <button className='w-full bg-primary text-white text-sm font-medium rounded p-2'>Login</button>
+                    <button className='w-full bg-primary text-white text-sm font-medium rounded p-2'>Register</button>
                     <div className='w-full text-sm md:text-base'>
                         <p className='text-center'>Already have an account? <Link to="/login" className='text-primary font-medium'>Login</Link></p>
                     </div>
