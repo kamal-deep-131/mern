@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { InputField } from '../components'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast } from "react-hot-toast"
+import axios from 'axios'
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -9,11 +10,15 @@ const Login = () => {
         password: "",
     })
 
+    const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
+
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         if (formData.email == "") {
             toast.error("Please Enter email")
@@ -22,7 +27,20 @@ const Login = () => {
             toast.error("Please Enter password")
         }
         if (formData.email && formData.password) {
-            console.log("Login Data: ", formData)
+            try {
+                setLoading(true)
+                const response = await axios.post("/api/v1/user/login", formData)
+                localStorage.setItem("token", response.data.token)
+                localStorage.setItem("user", JSON.stringify(response.data.user))
+                toast.success("Login Successfull")
+                setLoading(false)
+                navigate("/profile")
+                setFormData({ email: "", password: "" })
+            } catch (error) {
+                setLoading(true)
+                toast.error(error.response.data.message)
+                setLoading(false)
+            }
         }
 
     }
