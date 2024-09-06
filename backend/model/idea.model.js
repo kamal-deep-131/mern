@@ -1,6 +1,6 @@
-import mongoose, { Schema, model } from 'mongoose'
+import mongoose from 'mongoose';
 
-const ideaSchema = new Schema({
+const ideaSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -11,8 +11,9 @@ const ideaSchema = new Schema({
     },
     author: {
         type: mongoose.Types.ObjectId,
-        ref: "User"
+        ref: "User",
+        required: true
     }
-})
+});
 
-export default model('Idea', ideaSchema)
+export default mongoose.model('Idea', ideaSchema);

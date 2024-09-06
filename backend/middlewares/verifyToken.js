@@ -19,7 +19,9 @@ const verifyToken = (req, res, next) => {
             })
         }
 
-        req.body = { ...req.body, user }
+        const author = String(user?.userId)
+
+        req.body = { ...req.body, author }
         next()
     })
 }

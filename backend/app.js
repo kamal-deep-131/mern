@@ -3,6 +3,7 @@ import "dotenv/config"
 
 const app = express()
 
+
 //cross origin 
 import cors from 'cors'
 app.use(cors())

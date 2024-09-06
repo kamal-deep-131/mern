@@ -2,10 +2,10 @@ import Idea from '../model/idea.model.js'
 
 const createIdea = async (req, res) => {
     //take inputs
-    const { title, description, user } = req.body
+    const { title, description, author } = req.body
 
     //check all fields
-    if (!title || !description || !user) {
+    if (!title || !description || !author) {
         return res.status(400).json({
             success: false,
             message: "Please enter all fields"
@@ -16,7 +16,7 @@ const createIdea = async (req, res) => {
     const newIdea = new Idea({
         title,
         description,
-        user
+        author
     })
 
     //save idea
