@@ -18,4 +18,8 @@ app.get("/", (req, res) => {
 import userRoutes from './routes/user.routes.js'
 app.use('/api/v1/user', userRoutes)
 
+//idea route
+import ideaRoutes from './routes/idea.routes.js'
+app.use('/api/v1/idea', ideaRoutes)
+
 export default app
