@@ -5,5 +5,6 @@ import CreateIdea from './CreateIdea'
 import EditIdea from './EditIdea'
 import PageNotFound from './PageNotFound'
 import Profile from './Profile'
+import SingleIdea from './SingleIdea'
 
-export { Home, Login, Register, CreateIdea, EditIdea, PageNotFound, Profile }
+export { Home, Login, Register, CreateIdea, EditIdea, PageNotFound, Profile, SingleIdea }

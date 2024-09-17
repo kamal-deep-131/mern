@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import Layout from './Layout'
-import { CreateIdea, EditIdea, Home, PageNotFound, Profile, Register } from './pages'
+import { CreateIdea, EditIdea, Home, PageNotFound, Profile, Register, SingleIdea } from './pages'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import { Login } from './pages'
 import { Toaster } from 'react-hot-toast'
@@ -15,6 +15,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} path='/' />
       <Route element={<Login />} path='/login' />
       <Route element={<Register />} path='/register' />
+      <Route element={<SingleIdea />} path='/idea/:id' />
       <Route element={<ProtectRoute><CreateIdea /></ProtectRoute>} path='idea/create' />
       <Route element={<ProtectRoute><EditIdea /></ProtectRoute>} path='idea/edit/:id' />
       <Route element={<ProtectRoute><Profile /></ProtectRoute>} path='/profile' />
