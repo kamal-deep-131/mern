@@ -48,7 +48,7 @@ const Profile = () => {
             {/* Divider */}
             <div className="relative my-8 w-full">
                 <hr className="border-t-2 border-gray-300" />
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-4 bg-white text-gray-600 text-sm font-semibold">
+                <div className="absolute hidden md:block top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-4 bg-white text-gray-600 text-sm font-semibold">
                     Ideas you have posted
                 </div>
             </div>
