@@ -6,7 +6,6 @@ const deleteIdea = async (req, res) => {
         const { author } = req.body
 
         const idea = await Idea.findById(id)
-        console.log(idea)
 
         if (!idea) {
             return res.status(404).json({

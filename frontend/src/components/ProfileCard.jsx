@@ -21,12 +21,12 @@ const ProfileCard = ({ ideas, onDelete, onUpdate }) => {
                             Edit
                         </Link>
                         {/* Delete Button */}
-                        <button
-                            onClick={() => onDelete(idea._id)}
+                        <Link
+                            to={`/idea/delete/${idea._id}`}
                             className='py-1 px-3 bg-red-500 text-white text-sm font-medium rounded-md shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-150'
                         >
                             Delete
-                        </button>
+                        </Link>
                     </div>
                 </article>
             ))}

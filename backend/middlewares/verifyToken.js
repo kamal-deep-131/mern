@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken'
 
 const verifyToken = (req, res, next) => {
     const { token } = req.body
+    console.log("Token in verifyToken: ", token)
     //is token undefined or null
     if (!token) {
         return res.status(400).json({
