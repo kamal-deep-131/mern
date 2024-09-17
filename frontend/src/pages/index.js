@@ -1,5 +1,5 @@
 import Home from './Home'
-import Login from './login'
+import Login from './Login'
 import Register from './Register'
 import CreateIdea from './CreateIdea'
 import EditIdea from './EditIdea'
