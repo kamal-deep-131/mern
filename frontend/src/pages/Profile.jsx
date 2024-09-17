@@ -4,24 +4,23 @@ import axios from 'axios';
 import { ProfileCard } from '../components';
 
 const Profile = () => {
-    // State to store ideas
+
     const [ideas, setIdeas] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+    const userName = JSON.parse(localStorage.getItem('user'))?.name || "User"
 
-    // Fetch ideas when the component mounts
     useEffect(() => {
         const fetchIdeas = async () => {
             try {
                 // Get token from local storage
                 const token = localStorage.getItem('token');
 
-                // Make POST request to the API (since token needs to be in body)
+
                 const response = await axios.post('/api/v1/idea/profile', {
-                    token: token, // Pass token in the body as per your API
+                    token: token,
                 });
 
-                // Set the ideas from response data
                 setIdeas(response.data.ideas);
                 setLoading(false);
             } catch (err) {
@@ -36,7 +35,7 @@ const Profile = () => {
 
     return (
         <section className='flex flex-col items-start justify-start p-2 md:py-8 md:px-16 gap-5'>
-            <h1 className='text-5xl font-bold'>Hi, Kamal</h1>
+            <h1 className='text-5xl font-bold'>Hi, {userName}</h1>
             <h2 className='text-xl text-gray-700 mb-2'>
                 Welcome to your profile <br />
                 Share your ideas, political opinions, and more with all around the globe.
