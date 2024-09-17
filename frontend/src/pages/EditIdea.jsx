@@ -51,7 +51,7 @@ const EditIdea = () => {
 
                 const token = localStorage.getItem('token');
 
-                const response = await axios.patch(`/api/v1/idea/edit/${id}`, {
+                const response = await axios.patch(`https://bright-side-backend.vercel.app/api/v1/idea/edit/${id}`, {
                     title: formData.title,
                     description: formData.description,
                     token: token
