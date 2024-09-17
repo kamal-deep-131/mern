@@ -11,7 +11,7 @@ router.post('/create', verifyToken, createIdea)
 router.get('/display', displayAllIdeas)
 router.patch('/edit/:id', verifyToken, updateIdea)
 //get all ideas by author
-router.get('/profile', verifyToken, verifiedOwnerIdeas)
+router.post('/profile', verifyToken, verifiedOwnerIdeas)
 router.delete('/delete/:id', verifyToken, deleteIdea)
 
 export default router
