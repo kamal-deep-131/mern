@@ -20,7 +20,7 @@ const EditIdea = () => {
         // Fetch the single idea data by ID
         const fetchIdea = async () => {
             try {
-                const response = await axios.get(`/api/v1/idea/${id}`);
+                const response = await axios.get(`https://bright-side-backend.vercel.app/api/v1/idea/${id}`);
                 setFormData({
                     title: response.data.idea.title,
                     description: response.data.idea.description,

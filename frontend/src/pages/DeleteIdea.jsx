@@ -17,7 +17,7 @@ const DeleteIdea = () => {
             setLoading(true);
             const token = localStorage.getItem('token');
             console.log(token);
-            const response = await axios.post(`/api/v1/idea/delete/${id}`, { token: token });
+            const response = await axios.post(`https://bright-side-backend.vercel.app/api/v1/idea/delete/${id}`, { token: token });
             console.log(response);
             toast.success('Idea deleted successfully');
             setLoading(false);

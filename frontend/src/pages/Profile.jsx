@@ -23,7 +23,7 @@ const Profile = () => {
                 // Get token from local storage
                 const token = localStorage.getItem('token');
 
-                const response = await axios.post('/api/v1/idea/profile', {
+                const response = await axios.post('https://bright-side-backend.vercel.app/api/v1/idea/profile', {
                     token: token,
                 });
 

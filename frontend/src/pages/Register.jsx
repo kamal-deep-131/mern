@@ -34,10 +34,10 @@ const Register = () => {
         if (formData.name && formData.email && formData.password) {
             try {
                 setLoading(true)
-                const response = await axios.post("/api/v1/user/register", formData)
+                const response = await axios.post("https://bright-side-backend.vercel.app/api/v1/user/register", formData)
                 localStorage.setItem("token", response.data.token)
                 localStorage.setItem("user", JSON.stringify(response.data.user))
-                toast.success("Login Successfull")
+                toast.success("Login Successful")
                 setLogin(true)
                 navigate("/profile")
                 setFormData({ name: "", email: "", password: "" })

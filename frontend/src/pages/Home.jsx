@@ -11,7 +11,7 @@ const Home = () => {
         const fetchIdeas = async () => {
             try {
                 setLoading(true)
-                const response = await axios.get("/api/v1/idea/display")
+                const response = await axios.get("https://bright-side-backend.vercel.app/api/v1/idea/display")
                 setIdeas(response?.data?.ideas || [])
                 setLoading(false)
             } catch (error) {

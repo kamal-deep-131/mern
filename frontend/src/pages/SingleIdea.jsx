@@ -13,7 +13,7 @@ const SingleIdea = () => {
         // Fetch the single idea data by ID
         const fetchIdea = async () => {
             try {
-                const response = await axios.get(`/api/v1/idea/${id}`);
+                const response = await axios.get(`https://bright-side-backend.vercel.app/api/v1/idea/${id}`);
                 setIdea(response.data.idea);
                 setLoading(false);
             } catch (err) {

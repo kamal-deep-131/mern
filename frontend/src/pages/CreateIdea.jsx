@@ -11,7 +11,7 @@ const CreateIdea = () => {
     const publishBlog = async (formData) => {
         try {
             setLoading(true)
-            const response = await axios.post('/api/v1/idea/create', {
+            const response = await axios.post('https://bright-side-backend.vercel.app/api/v1/idea/create', {
                 title: formData.title,
                 description: formData.description,
                 token
