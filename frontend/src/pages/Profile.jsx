@@ -47,11 +47,11 @@ const Profile = () => {
     };
 
     return (
-        <section className='flex flex-col items-start justify-start p-2 md:py-8 md:px-16 gap-5'>
+        <section className='flex flex-col items-start justify-start p-4 md:py-8 md:px-8 gap-5'>
             <div className="w-full flex flex-col md:flex-row items-start justify-between gap-4">
                 <div className="flex flex-col">
-                    <h1 className='text-5xl font-bold mb-4'>Hi, {userName}</h1>
-                    <h2 className='text-xl text-gray-700 mb-2'>
+                    <h1 className='text-2xl md:text-4xl font-bold mb-4'>Hi, {userName}</h1>
+                    <h2 className='text-lg text-gray-700 mb-2'>
                         Welcome to your profile <br />
                         Share your ideas, political opinions, and more with all around the globe.
                     </h2>

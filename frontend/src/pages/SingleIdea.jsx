@@ -29,12 +29,10 @@ const SingleIdea = () => {
     if (error) return <div className="text-center py-10 text-red-500">{error}</div>;
 
     return (
-        <section className="max-w-4xl mx-auto p-4 md:py-12">
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-
-
-                <div className="p-8 flex flex-col gap-4">
-                    <h1 className="text-4xl font-bold text-gray-900 p-4 border-l-8 border-primary bg-[#ffddb8]">{idea.title || 'Untitled Idea'}</h1>
+        <section className="max-w-3xl mx-auto p-4 ">
+            <div className="bg-white md:shadow-lg md:rounded-lg overflow-hidden">
+                <div className="p-0 md:p-8 flex flex-col gap-4">
+                    <h1 className="text-2xl md:text-4xl font-bold text-gray-900 p-4 border-l-4 md:border-l-8 border-primary bg-[#ffddb8]">{idea.title || 'Untitled Idea'}</h1>
                     <p className='text-black  text-sm font-semibold italic rounded'>
                         - by {idea.author?.name || 'Anonymous'}
                     </p>
