@@ -32,7 +32,7 @@ const Home = () => {
     }
 
     return (
-        <section className='w-full h-full p-2 md:p-6'>
+        <section className='w-full h-full p-4'>
             {ideas.length === 0 ? (
                 <h1>No Ideas to display</h1>
             ) : (

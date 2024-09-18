@@ -11,7 +11,7 @@ const IdeaCard = ({ ideas }) => {
                         <p className='text-black bg-[#ffddb8] text-sm font-semibold max-w-fit px-1 rounded'>
                             Posted By {idea.author?.name || 'Anonymous'}
                         </p>
-                        <p className='text-base text-gray-800 line-clamp-3'>
+                        <p className='text-lg text-gray-800 line-clamp-3'>
                             {idea.description || 'No description available.'}
                         </p>
                     </Link>
