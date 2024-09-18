@@ -14,10 +14,10 @@ const Navbar = () => {
             <div>
                 {login ?
                     (
-                        <Link className='py-1 px-2 md:py-2 md:px-4 bg-primary text-lg  text-white font-medium rounded' to="/profile">Profile</Link>
+                        <Link className='py-2 px-4 bg-primary text-lg  text-white font-medium rounded' to="/profile">Profile</Link>
                     )
                     : (
-                        <Link className='py-1 px-2 md:py-2 md:px-4 bg-primary text-lg text-white font-medium rounded' to="/login">Login</Link>
+                        <Link className='py-2 px-4 bg-primary text-lg text-white font-medium rounded' to="/login">Login</Link>
                     )}
             </div>
         </header>
