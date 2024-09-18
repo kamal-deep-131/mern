@@ -37,20 +37,20 @@ const DeleteIdea = () => {
     return (
         <>
             {showModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
                     <div className="bg-white rounded-lg p-6">
-                        <h2 className="text-xl font-semibold mb-4">Confirm Deletion</h2>
-                        <p className="mb-4">Are you sure you want to delete this idea?</p>
+                        <h2 className="text-2xl font-bold mb-4">Confirm Deletion</h2>
+                        <p className="mb-4 text-lg">Are you sure you want to delete this idea?</p>
                         <div className="flex justify-end gap-4">
                             <button
                                 onClick={() => navigate(-1)}
-                                className="py-2 px-4 bg-gray-300 text-black rounded-md"
+                                className="py-2 px-4 bg-gray-300 text-black text-lg font-semibold rounded-md"
                             >
                                 Cancel
                             </button>
                             <button
                                 onClick={handleDelete}
-                                className="py-2 px-4 bg-red-500 text-white rounded-md"
+                                className="py-2 px-4 bg-red-500 text-white text-lg font-semibold rounded-md"
                             >
                                 {loading ? 'Deleting...' : 'Delete'}
                             </button>

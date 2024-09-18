@@ -73,8 +73,8 @@ const EditIdea = () => {
 
     return (
         <section className="w-full h-full">
-            <div className="p-2 md:p-6 flex flex-col items-center justify-center gap-2 md:gap-4 w-full mx-auto md:w-3/4">
-                <h1 className="text-2xl  md:text-3xl font-bold">Edit Idea</h1>
+            <div className='w-full  md:w-3/4 mx-auto my-8 p-6  rounded flex flex-col items-center justify-center gap-4 md:shadow-lg bg-white md:border md:border-gray-600'>
+                <h1 className='text-4xl font-bold'>Edit Idea</h1>
                 <form className="flex flex-col items-center justify-center gap-2 md:gap-4 w-full" onSubmit={handleSubmit}>
                     <InputField
                         label="Title"
@@ -94,7 +94,7 @@ const EditIdea = () => {
                     />
 
                     <button
-                        className={`w-full bg-primary text-white font-medium rounded p-2 ${isSaving ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`w-full bg-primary text-white font-medium rounded p-2 text-lg ${isSaving ? 'opacity-50 cursor-not-allowed' : ''}`}
                         disabled={isSaving}
                     >
                         {isSaving ? 'Saving...' : 'Save'}
