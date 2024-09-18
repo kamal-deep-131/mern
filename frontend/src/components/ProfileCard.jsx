@@ -7,7 +7,7 @@ const ProfileCard = ({ ideas, onDelete, onUpdate }) => {
             {ideas.map((idea) => (
                 <article key={idea._id} className='w-full flex flex-col gap-4 p-6 border border-gray-400 rounded-md shadow-lg bg-white hover:shadow-xl transition-shadow duration-200'>
 
-                    <h1 className='text-2xl font-bold text-gray-900'>{idea.title || 'Untitled Idea'}</h1>
+                    <h1 className='text-2xl font-bold text-gray-900 line-clamp-2'>{idea.title || 'Untitled Idea'}</h1>
                     <p className='text-base text-gray-800 line-clamp-3'>
                         {idea.description || 'No description available.'}
                     </p>

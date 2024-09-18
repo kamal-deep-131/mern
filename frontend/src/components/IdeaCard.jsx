@@ -7,7 +7,7 @@ const IdeaCard = ({ ideas }) => {
             {ideas.map((idea) => (
                 <article key={idea._id} className='w-full flex flex-col gap-4 p-6 border border-gray-400 rounded-md shadow-lg bg-white hover:shadow-xl transition-shadow duration-200'>
                     <Link to={`/idea/${idea._id}`} className='flex flex-col gap-3'>
-                        <h1 className='text-2xl font-bold text-gray-900'>{idea.title || 'Untitled Idea'}</h1>
+                        <h1 className='text-2xl font-bold text-gray-900 line-clamp-2'>{idea.title || 'Untitled Idea'}</h1>
                         <p className='text-black bg-[#ffddb8] text-sm font-semibold max-w-fit px-1 rounded'>
                             Posted By {idea.author?.name || 'Anonymous'}
                         </p>
